@@ -6,19 +6,42 @@
 </head>
 
 <body>
-<div id="pre-game" class="is-active">
-    <button id="hi">View High Scores</button>
+<div class ="container">
+    
+    <h1>The Quiz Card Game</h1>
+    
+    <button id="start-quiz">Start Quiz</button>
+    <!-- to start the game -->
+
+    <div class="quiz"></div>
+        
+        <h3 id="question">Questions inserted here</h3>
+        <!-- displays question -->
+
+        <div class="answerButtons">
+            <button class="button">Answer</button>
+            <button class="button">Answer</button>
+            <button class="button">Answer</button>
+            <button class="button">Answer</button>
+            <!-- buttons to display answers -->
+        </div>
+        
+        <button type="submit"> Next Question</button>
+        <!-- button to advance to next question -->
 </div>
-<div id="game" class="is-inactive">
-    GAME
+
+<div id = "pre-game" class= "is-active">
+    <button id="hi"> View High Scores</button>
 </div>
-<div id="game-end" class="is-inactive">
-    NOT GAME
-</div>
-<div id="hi-score" class="is-inactive">
-    HI-SCORE
-    <button id="back">Go back</button>
-</div>
+
+<div id = "game" class= "is-inactive"> Game </div>
+
+<div id = "game-end" class= "is-inactive"> Game End </div>
+
+<div id = "high-score" class= "is-inactive"> HI-SCORE </div>
+
+<button id="back"> Go Back </button>
+
 
 <script src="./assets/js/script.js"></script>
 </body>

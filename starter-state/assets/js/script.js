@@ -1,21 +1,49 @@
-var preGame = document.getElementById("pre-game");
-var game = document.getElementById("game");
-var gameEnd = document.getElementById("game-end");
-var hiScore = document.getElementById("hi-score");
+var preGameEl = document.getElementById("pre-game");
+var gameEl = document.getElementById("game");
+var gameEndEl = document.getElementById("game-end");
+var hiScoreEl = document.getElementById("hi-score");
 
-var hiButton = document.getElementById("hi");
-var backButton = document.getElementById("back");
+var hiButtonEl = document.getElementById("hi");
+var backButtonEl = document.getElementById("back");
 
-hiButton.addEventListener("click", viewHiScore);
-backButton.addEventListener("click", function () {
+
+hiButtonEl.addEventListener("click", viewHiScore);
+
+backButtonEl.addEventListener("click", function () {
     document.location.reload();
 });
 
 
 function startGame() {
-    preGame.setAttribute("class", "is-inactive");
-    game.setAttribute("class", "is-active");
-}
+    preGameEl.setAttribute("class", "is-inactive");
+    gameEl.setAttribute("class", "is-active");
+    }
+    
+    
+
+    // var timeInterval = setInterval(function (){
+     
+    //     // displays seconds remaining
+    //     if (quizTime > 1) {
+    //         gameEl.setAttribute("style","font-size:30px; position:absolute; top:0; right:10px;");
+    //         gameEl.textContent = quizTime + ' seconds remaining';
+    //         quizTime--;
+    //     }   else if(quizTime === 1) {
+    //         gameEl.textContent = quizTime + ' second remaining';
+    //         quizTime--;
+    //     }   else {
+    //         gameEl.textContent = 'end';
+    //         clearInterval(timeInterval);
+            
+    //         // endGame();
+    //         // starting endGame function
+    //     }
+        
+    // }, 1000);
+
+    
+    
+
 
 function endGame() {
     game.setAttribute("class", "is-inactive");
@@ -23,8 +51,8 @@ function endGame() {
 }
 
 function viewHiScore() {
-    preGame.setAttribute("class", "is-inactive");
+    preGameEl.setAttribute("class", "is-inactive");
     game.setAttribute("class", "is-inactive");
-    gameEnd.setAttribute("class", "is-inactive");
-    hiScore.setAttribute("class", "is-active");
+    gameEndEl.setAttribute("class", "is-inactive");
+    hiScoreEl.setAttribute("class", "is-active");
 }
