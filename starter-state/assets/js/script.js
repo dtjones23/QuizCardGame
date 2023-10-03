@@ -11,6 +11,9 @@ hiButtonEl.addEventListener("click", viewHiScore);
 
 backButtonEl.addEventListener("click", function () {
     document.location.reload();
+backButtonEl.addEventListener("click" , function () {
+    this.hidden
+})
 });
 
 

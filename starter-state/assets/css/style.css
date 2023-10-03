@@ -1,10 +1,48 @@
+body {
+  background-color: gray;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+/* centers container */
+
 .is-active {
   display: flex;
 }
+/* displays active elements*/
 .is-inactive {
   display: none;
+  /* hides inactive elements */
 }
 
+#pre-game {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  /* postions score in corner */
 
+}
 
+#back {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  /* positions back in corner */
+}
+
+.answerButtons {
+  display: grid;
+  justify-content: space-evenly;
+  justify-content: start;
+  gap: 5px;
+  /* aligns answers vertically */
+}
+
+.button {
+  padding: 10px 200px 10px 10px
+  /* adds padding for content */
+}
 
