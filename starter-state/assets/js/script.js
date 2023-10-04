@@ -98,9 +98,22 @@ function selectAnswer(event){
         selectedBtn.classList.add("correct");
     } else {
         selectedBtn.classList.add("incorrect");
+        /* correct answers will have a green back ground and incorrect ansswers will have a red, only when click. */
     }
-
+    Array.from(answerBtn.children).forEach (button => {
+        /* one answer can be selected per question */
+        if(button.dataset.correct === "true"){
+            button.classList.add("correct");
+        } else {
+            button.disabled = true;
+            // can't click any of answer once answer is selected
+        }
+    });
+    nextBtn.style.display = "block";
+    // enables NEXT QUESTION button once an answer is clicked
 }
+
+
 
 startGame();
 
