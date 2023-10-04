@@ -53,7 +53,7 @@ function startGame(){
 // function added to start the game that will have question number and be scored
     currentQuestionIndex = 0;
     score = 0; 
-    nextBtn.innerHTML = "NEXT";
+    nextBtn.innerHTML = "NEXT QUESTION";
    
     showQuestion();
     // call functon to display questions
@@ -61,6 +61,8 @@ function startGame(){
 
 function showQuestion(){
     // function to show question and answers
+    resetState();
+    // calls function that hides the 'Answer' buttons from display the list 
     let currentQuestion = quizQuestions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     /* to make the zero [] into 1 in order to have the first question be the with the first listed question in the quizQuestion array */ 
@@ -72,7 +74,32 @@ function showQuestion(){
         button.classList.add("button");
         answerBtn.appendChild(button);
         /* will show both the button-class-answer and the answers to the queston */
+        if(answer.isCorrect){
+            button.dataset.correct = answer.isCorrect
+            // this will add the true or false value to the answer
+        }
+        button.addEventListener("click", selectAnswer);
+        // calls the selectAnswer
     });
+}
+
+function resetState(){
+    // hides the 'Next' and the previous 'Answer' buttons
+    nextBtn.style.display = "none";
+    while(answerBtn.firstChild) {
+        answerBtn.removeChild(answerBtn.firstChild)
+    }
+}
+
+function selectAnswer(event){
+    const selectedBtn = event.target; 
+    const isCorrect = selectedBtn.dataset.correct === "true";
+    if (isCorrect){
+        selectedBtn.classList.add("correct");
+    } else {
+        selectedBtn.classList.add("incorrect");
+    }
+
 }
 
 startGame();

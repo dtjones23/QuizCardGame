@@ -46,3 +46,10 @@ body {
   /* adds padding for content */
 }
 
+.correct { 
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
