@@ -1,4 +1,3 @@
-// const beginQuizEl = document.getElementById("start-quiz");
 const quizQuestions = [{
     question: "Commonly used data types DO NOT include: ",
     answer: 
@@ -40,6 +39,8 @@ const quizQuestions = [{
     // List of the questions for quiz
 ];
 
+// const beginQuizElQuiz = document.getElementById("begin-quiz")
+
 const questionsElement = document.getElementById("questions");
 const answerBtn = document.getElementById("answer-buttons");
 const nextBtn = document.getElementById("submit-button");
@@ -62,6 +63,7 @@ function startGame(){
 function showQuestion(){
     // function to show question and answers
     resetState();
+    showQuestion();
     // calls function that hides the 'Answer' buttons from display the list 
     let currentQuestion = quizQuestions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
@@ -96,6 +98,8 @@ function selectAnswer(event){
     const isCorrect = selectedBtn.dataset.correct === "true";
     if (isCorrect){
         selectedBtn.classList.add("correct");
+        score++;
+        // increase score by 1
     } else {
         selectedBtn.classList.add("incorrect");
         /* correct answers will have a green back ground and incorrect ansswers will have a red, only when click. */
@@ -113,6 +117,32 @@ function selectAnswer(event){
     // enables NEXT QUESTION button once an answer is clicked
 }
 
+function showScore (){
+    // displaying the score in the questionsElement
+    resetState();
+    questionsElement.innerHTML = "Scored ${scored} out of ${quizQuestions}"
+
+    // questionsElement.innerHTML
+}
+
+function submitButtonGo(){
+    // once answered the score will be kept and the next question shall appeared until done
+    currentQuestionIndex++;
+    if (currentQuestionIndex < quizQuestions.length){
+        showQuestion();
+    } else {
+        showScore();
+    }
+}
+
+nextBtn.addEventListener("click", function(){
+    if(currentQuestionIndex < questionsElement.length) {
+        submitButtonGo();
+    } else {
+        startGame();
+    }
+    // event to get through all questions
+})
 
 
 startGame();
