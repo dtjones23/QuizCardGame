@@ -40,10 +40,8 @@ const quizQuestions = [{
     // List of the questions for quiz
 ];
 
-startQuiz.addEventListener('click', startGame());
-
 const questionsElement = document.getElementById("questions");
-const answerButn = document.getElementById("answer-button");
+const answerBtn = document.getElementById("answer-buttons");
 const nextBtn = document.getElementById("submit-button");
 // will be used in functions
 
@@ -61,5 +59,22 @@ function startGame(){
     // call functon to display questions
 }
 
+function showQuestion(){
+    // function to show question and answers
+    let currentQuestion = quizQuestions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    /* to make the zero [] into 1 in order to have the first question be the with the first listed question in the quizQuestion array */ 
+    questionsElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
+    currentQuestion.answer.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("button");
+        answerBtn.appendChild(button);
+        /* will show both the button-class-answer and the answers to the queston */
+    });
+}
+
+startGame();
 
 
