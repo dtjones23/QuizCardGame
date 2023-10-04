@@ -1,4 +1,5 @@
-const quizQuestionsEl = [{
+// const beginQuizEl = document.getElementById("start-quiz");
+const quizQuestions = [{
     question: "Commonly used data types DO NOT include: ",
     answer: 
         [{text: "Strings", isCorrect : false },
@@ -39,50 +40,26 @@ const quizQuestionsEl = [{
     // List of the questions for quiz
 ];
 
+startQuiz.addEventListener('click', startGame());
+
+const questionsElement = document.getElementById("questions");
+const answerButn = document.getElementById("answer-button");
+const nextBtn = document.getElementById("submit-button");
+// will be used in functions
+
+let currentQuestionIndex = 0;
+let score = 0;
+// starter points for both the points-counted and question-order
+
+function startGame(){
+// function added to start the game that will have question number and be scored
+    currentQuestionIndex = 0;
+    score = 0; 
+    nextBtn.innerHTML = "NEXT";
+   
+    showQuestion();
+    // call functon to display questions
+}
 
 
 
-// const startQuizBtnEl = document.getElementById("start-quiz");
-// var preGameEl = document.getElementById("pre-game");
-// var gameEl = document.getElementById("game");
-// var gameEndEl = document.getElementById("game-end");
-// var hiScoreEl = document.getElementById("hi-score");
-
-// var answerButtonEl = document.getElementById("answerButton");
-// var startQuiz = document.getElementById("start-quiz");
-
-
-// var hiButtonEl = document.getElementById("hi");
-// var backButtonEl = document.getElementById("back");
-
-
-// hiButtonEl.addEventListener("click", viewHiScore);
-
-// backButtonEl.addEventListener("click", function () {
-//     document.location.reload();
-// });
-
-// startQuiz.addEventListener("click", startGame());
-
-// start the quiz game
-
-
-// function startGame() {
-//     preGameEl.setAttribute("class", "is-inactive");
-//     gameEl.setAttribute("class", "is-active");
-// }
-    
-    
-
-
-// function endGame() {
-//     game.setAttribute("class", "is-inactive");
-//     gameEnd.setAttribute("class", "is-active");
-// }
-
-// function viewHiScore() {
-//     preGameEl.setAttribute("class", "is-inactive");
-//     game.setAttribute("class", "is-inactive");
-//     gameEndEl.setAttribute("class", "is-inactive");
-//     hiScoreEl.setAttribute("class", "is-active");
-// }
